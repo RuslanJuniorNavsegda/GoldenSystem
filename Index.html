@@ -1,89 +1,119 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Golden System - Веб-разработка и цифровые решения для бизнеса"
+      content="Golden System - Веб-студия полного цикла"
     />
-    <title>Golden System - Веб Студия</title>
+    <title>Golden System - Создание сайтов и веб-приложений</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Raleway:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <header>
-      <div class="logo">Golden System</div>
-      <nav class="nav-links">
-        <a href="#home">Главная</a>
-        <a href="#services">Услуги</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-      <button class="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <body class="antialiased">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="/" class="logo">
+            <span class="logo__icon">GS</span>
+            <span class="logo__text">Golden System</span>
+          </a>
+
+          <ul class="nav__list">
+            <li><a href="#home" class="nav__link active">Главная</a></li>
+            <li><a href="#services" class="nav__link">Услуги</a></li>
+            <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
+            <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+            <li><a href="#contact" class="nav__link">Контакты</a></li>
+          </ul>
+
+          <button class="burger">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </button>
+        </nav>
+      </div>
     </header>
 
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h1>Превращаем идеи в цифровые решения</h1>
-        <p>Полный цикл разработки: от концепции до реализации</p>
-        <button class="cta-button">Начать проект</button>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="section-title">
-        <h2>Наши услуги</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Веб-разработка</h3>
-          <p>Создание современных веб-приложений любой сложности</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            <span class="text-gradient">Цифровые решения</span>
+            для вашего бизнеса
+          </h1>
+          <p class="hero__subtitle">
+            Полный цикл разработки: от идеи до реализации
+          </p>
+          <a href="#contact" class="btn">Обсудить проект</a>
         </div>
-        <!-- Добавьте другие услуги -->
       </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
-      <div class="section-title">
-        <h2>Наши работы</h2>
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section__title">Наши услуги</h2>
+
+        <div class="services-grid">
+          <!-- Service Cards -->
+        </div>
       </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="project1.jpg" alt="Пример проекта" />
-          <div class="project-info">
-            <h4>Корпоративный сайт</h4>
-            <p>Веб-платформа для логистической компании</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section__title">Наши работы</h2>
+
+        <div class="portfolio-grid">
+          <!-- Portfolio Items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section bg-light">
+      <div class="container">
+        <h2 class="section__title">Отзывы клиентов</h2>
+
+        <div class="reviews-slider">
+          <!-- Review Cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section__title">Свяжитесь с нами</h2>
+
+        <div class="contact-wrapper">
+          <form class="contact-form">
+            <!-- Form Fields -->
+          </form>
+
+          <div class="contact-info">
+            <!-- Contact Details -->
           </div>
         </div>
-        <!-- Добавьте другие проекты -->
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="section-title">
-        <h2>Свяжитесь с нами</h2>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Footer Content -->
       </div>
-      <div class="contact-wrapper">
-        <form class="contact-form">
-          <input type="text" placeholder="Ваше имя" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Сообщение" rows="5" required></textarea>
-          <button class="cta-button">Отправить</button>
-        </form>
-        <div class="contact-info">
-          <p>Телефон: +7 (999) 123-45-67</p>
-          <p>Email: contact@goldensystem.ru</p>
-          <p>Адрес: Кишинёв, ул. Цифровая, 15</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2025 Golden System. Все права защищены</p>
     </footer>
 
     <script src="script.js"></script>
