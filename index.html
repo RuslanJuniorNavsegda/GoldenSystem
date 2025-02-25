@@ -1,245 +1,317 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden System - Веб-студия премиум класса</title>
+    <title>Golden System - Веб-разработка премиум класса</title>
     <meta
       name="description"
-      content="Профессиональная разработка сайтов и веб-приложений"
+      content="Профессиональная разработка сайтов и мобильных приложений. 150+ успешных проектов. Полный цикл разработки от концепции до запуска."
     />
-
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Raleway:wght@700;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Стили -->
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="antialiased">
-    <!-- Header -->
+  <body>
     <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <a href="/" class="logo">
-            <span class="logo__icon">GS</span>
-            <span class="logo__text">Golden System</span>
-          </a>
+      <nav class="nav container">
+        <a href="#home" class="logo">
+          <span class="logo-icon">GS</span>
+          <span class="logo-text">Golden System</span>
+        </a>
 
-          <ul class="nav__list">
-            <li><a href="#home" class="nav__link">Главная</a></li>
-            <li><a href="#services" class="nav__link">Услуги</a></li>
-            <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
-            <li><a href="#reviews" class="nav__link">Отзывы</a></li>
-            <li><a href="#contact" class="nav__link">Контакты</a></li>
-          </ul>
+        <div class="nav-links">
+          <a href="#home" class="nav-link active">Главная</a>
+          <a href="#services" class="nav-link">Услуги</a>
+          <a href="#process" class="nav-link">Процесс</a>
+          <a href="#portfolio" class="nav-link">Портфолио</a>
+          <a href="#team" class="nav-link">Команда</a>
+          <a href="#contact" class="nav-link">Контакты</a>
+        </div>
 
-          <button class="burger" aria-label="Меню">
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-            <span class="burger__line"></span>
-          </button>
-        </nav>
-      </div>
+        <button class="burger" aria-label="Открыть меню">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="container">
-        <div class="hero__content">
-          <h1 class="hero__title animate">
-            <span class="text-gradient">Цифровая трансформация</span><br />
-            вашего бизнеса
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title scroll-effect">
+            <span class="text-gradient">Создаем цифровые</span>
+            <span class="text-gradient">решения</span>
           </h1>
-          <p class="hero__subtitle">
-            Создаем уникальные веб-решения с 2018 года
+          <p class="hero-subtitle scroll-effect">
+            Разработка сайтов и приложений которые увеличивают ваш доход
           </p>
-          <a href="#contact" class="btn">Начать проект</a>
+          <div class="hero-stats">
+            <div class="stat-item scroll-effect">
+              <div class="stat-number">150+</div>
+              <div class="stat-text">Завершенных проектов</div>
+            </div>
+            <div class="stat-item scroll-effect">
+              <div class="stat-number">98%</div>
+              <div class="stat-text">Довольных клиентов</div>
+            </div>
+          </div>
+          <button class="cta-button scroll-effect" type="button">
+            Обсудить проект →
+          </button>
         </div>
-        <div class="hero__image">
+        <div class="hero-visual">
+          <div class="gradient-circle"></div>
           <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt="Рабочее пространство"
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Разработка программного обеспечения"
+            class="hero-image"
             loading="lazy"
           />
         </div>
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services Section -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section__title animate">Наши услуги</h2>
+        <h2 class="section-title scroll-effect">Наши экспертизы</h2>
+        <p class="section-subtitle scroll-effect">
+          Полный цикл разработки цифровых продуктов
+        </p>
+
         <div class="services-grid">
-          <div class="service-card animate">
-            <div class="service-card__icon">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/code.png"
-                alt="Веб-разработка"
-              />
-            </div>
-            <h3>Веб-разработка</h3>
-            <p>Современные технологии: React, Vue.js, Node.js</p>
-          </div>
+          <article class="service-card scroll-effect">
+            <div class="card-icon">🌐</div>
+            <h3>Корпоративные сайты</h3>
+            <ul class="service-list">
+              <li>Индивидуальный дизайн</li>
+              <li>Мультиязычная поддержка</li>
+              <li>Интеграция с CRM</li>
+              <li>SEO оптимизация</li>
+            </ul>
+          </article>
 
-          <div class="service-card animate">
-            <div class="service-card__icon">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/design.png"
-                alt="Дизайн"
-              />
-            </div>
-            <h3>UI/UX Дизайн</h3>
-            <p>Интуитивные интерфейсы с продуманной логикой</p>
-          </div>
+          <article class="service-card scroll-effect">
+            <div class="card-icon">🛒</div>
+            <h3>Интернет-магазины</h3>
+            <ul class="service-list">
+              <li>Платформы под ключ</li>
+              <li>Платежные системы</li>
+              <li>Система аналитики</li>
+              <li>Мобильная адаптация</li>
+            </ul>
+          </article>
 
-          <div class="service-card animate">
-            <div class="service-card__icon">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/rocket.png"
-                alt="SEO"
-              />
-            </div>
-            <h3>Продвижение</h3>
-            <p>SEO оптимизация и маркетинговая стратегия</p>
+          <article class="service-card scroll-effect">
+            <div class="card-icon">📱</div>
+            <h3>Мобильные приложения</h3>
+            <ul class="service-list">
+              <li>iOS и Android</li>
+              <li>Кроссплатформенные решения</li>
+              <li>Push-уведомления</li>
+              <li>Интеграция API</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section bg-dark">
+      <div class="container">
+        <h2 class="section-title scroll-effect">Как мы работаем</h2>
+        <div class="process-steps">
+          <div class="step-item scroll-effect">
+            <div class="step-number">01</div>
+            <h4>Анализ</h4>
+            <p>Глубокое исследование бизнеса и конкурентов</p>
+          </div>
+          <div class="step-item scroll-effect">
+            <div class="step-number">02</div>
+            <h4>Прототип</h4>
+            <p>Создание интерактивного макета</p>
+          </div>
+          <div class="step-item scroll-effect">
+            <div class="step-number">03</div>
+            <h4>Дизайн</h4>
+            <p>Разработка UI/UX концепции</p>
+          </div>
+          <div class="step-item scroll-effect">
+            <div class="step-number">04</div>
+            <h4>Разработка</h4>
+            <p>Программирование и тестирование</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="section bg-light">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
       <div class="container">
-        <h2 class="section__title animate">Наши работы</h2>
+        <h2 class="section-title scroll-effect">Наши кейсы</h2>
+        <div class="portfolio-filter scroll-effect">
+          <button class="filter-btn active" type="button">Все</button>
+          <button class="filter-btn" type="button">Сайты</button>
+          <button class="filter-btn" type="button">Приложения</button>
+          <button class="filter-btn" type="button">Дизайн</button>
+        </div>
+
         <div class="portfolio-grid">
-          <div class="portfolio-item animate">
-            <img
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-              alt="Проект 1"
-              loading="lazy"
-            />
-            <div class="portfolio-info">
-              <h4>Корпоративный портал</h4>
-              <p>Веб-приложение для управления бизнес-процессами</p>
+          <article class="portfolio-item scroll-effect" data-category="сайты">
+            <div class="portfolio-image">
+              <img
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
+                alt="Интернет-магазин"
+                loading="lazy"
+              />
+              <div class="portfolio-overlay">
+                <h4 class="project-title">FashionStore</h4>
+                <div class="tech-stack">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>MongoDB</span>
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <div class="portfolio-item animate">
+          <article
+            class="portfolio-item scroll-effect"
+            data-category="приложения"
+          >
+            <div class="portfolio-image">
+              <img
+                src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Мобильное приложение"
+                loading="lazy"
+              />
+              <div class="portfolio-overlay">
+                <h4 class="project-title">HealthTracker</h4>
+                <div class="tech-stack">
+                  <span>Flutter</span>
+                  <span>Firebase</span>
+                  <span>AI</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title scroll-effect">Наша команда</h2>
+        <div class="team-grid">
+          <div class="team-member scroll-effect">
             <img
-              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-              alt="Проект 2"
+              src="assets/images/photo_2025-02-25_23-31-50_7475457704731869196.png"
+              alt="Руслан Пастика"
+              class="member-photo"
               loading="lazy"
             />
-            <div class="portfolio-info">
-              <h4>Интернет-магазин</h4>
-              <p>E-commerce платформа с AI-рекомендациями</p>
+            <h4>Руслан Пастика</h4>
+            <p>CEO, Технический директор</p>
+            <div class="member-social">
+              <a href="#" class="social-link linkedin">
+                <img src="assets/images/linkedin-icon.svg" alt="LinkedIn" />
+                <span>Профиль LinkedIn</span>
+              </a>
+              <a href="#" class="social-link github">
+                <img src="assets/images/github-65.png" alt="GitHub" />
+                <span>Репозиторий GitHub</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Reviews -->
-    <section id="reviews" class="section">
+    <!-- Contact Section -->
+    <section id="contact" class="section">
       <div class="container">
-        <h2 class="section__title animate">Отзывы клиентов</h2>
-        <div class="reviews-slider">
-          <div class="review-card animate">
-            <img
-              src="https://randomuser.me/api/portraits/women/1.jpg"
-              alt="Анна Иванова"
-              class="review-photo"
-            />
-            <h4>Анна Иванова</h4>
-            <div class="rating">★★★★★</div>
-            <p>
-              "Профессиональный подход и соблюдение сроков. Результат превзошел
-              ожидания!"
-            </p>
-          </div>
-
-          <div class="review-card animate">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              alt="Дмитрий Петров"
-              class="review-photo"
-            />
-            <h4>Дмитрий Петров</h4>
-            <div class="rating">★★★★☆</div>
-            <p>
-              "Отличное соотношение цены и качества. Буем рекомендовать
-              партнёрам!"
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section bg-dark">
-      <div class="container">
-        <h2 class="section__title animate">Контакты</h2>
         <div class="contact-wrapper">
-          <form class="contact-form animate">
-            <input type="text" placeholder="Ваше имя" required />
-            <input type="email" placeholder="Эл. почта" required />
-            <textarea rows="5" placeholder="Опишите ваш проект"></textarea>
-            <button type="submit" class="btn">Отправить</button>
-          </form>
+          <div class="contact-form scroll-effect">
+            <h3>Начните свой проект</h3>
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Ваше имя" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Опишите ваш проект"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="cta-button">Отправить заявку</button>
+            </form>
+          </div>
 
-          <div class="contact-info animate">
-            <div class="contact-item">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/phone.png"
-                alt="Телефон"
-              />
-              <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+          <div class="contact-info scroll-effect">
+            <div class="info-card">
+              <h4>Контакты</h4>
+              <div class="contact-item">
+                <span class="emoji-icon">🏢</span>
+                <p>Кишинёв, ул. Цифровая, 15</p>
+              </div>
+              <div class="contact-item">
+                <span class="emoji-icon">📞</span>
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+              </div>
+              <div class="contact-item">
+                <span class="emoji-icon">✉️</span>
+                <a href="mailto:contact@goldensystem.ru"
+                  >contact@goldensystem.ru</a
+                >
+              </div>
             </div>
-            <div class="contact-item">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/email.png"
-                alt="Почта"
-              />
-              <a href="mailto:contact@goldensystem.ru"
-                >contact@goldensystem.ru</a
-              >
-            </div>
-            <div class="contact-item">
-              <img
-                src="https://img.icons8.com/3d-fluency/100/map-marker.png"
-                alt="Адрес"
-              />
-              <p>Кишинёв, ул. Цифровая, 15</p>
+
+            <div class="social-links">
+              <a href="#" class="social-btn telegram">📨 Telegram</a>
+              <a href="#" class="social-btn whatsapp">💬 WhatsApp</a>
+              <a href="#" class="social-btn email">📧 Написать email</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <p>© 2025 Golden System. Все права защищены</p>
-        <div class="social-links">
-          <a href="#"
-            ><img
-              src="https://img.icons8.com/3d-fluency/100/telegram.png"
-              alt="Telegram"
-          /></a>
-          <a href="#"
-            ><img
-              src="https://img.icons8.com/3d-fluency/100/whatsapp.png"
-              alt="WhatsApp"
-          /></a>
-          <a href="#"
-            ><img
-              src="https://img.icons8.com/3d-fluency/100/linkedin.png"
-              alt="LinkedIn"
-          /></a>
+        <div class="footer-content">
+          <div class="footer-col">
+            <h5>Golden System</h5>
+            <p>Создаем цифровые решения с 2018 года</p>
+          </div>
+          <div class="footer-col">
+            <h5>Услуги</h5>
+            <ul>
+              <li><a href="#">Веб-разработка</a></li>
+              <li><a href="#">Мобильные приложения</a></li>
+              <li><a href="#">Дизайн интерфейсов</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Ресурсы</h5>
+            <ul>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Кейсы</a></li>
+              <li><a href="#">Документация</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Golden System. Все права защищены</p>
         </div>
       </div>
     </footer>
