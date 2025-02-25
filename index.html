@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden System - Веб-разработка премиум класса</title>
+    <title>Golden System - Веб-студия премиум класса</title>
     <meta
       name="description"
-      content="Профессиональная веб-студия полного цикла. Разработка сайтов, веб-приложений и цифровых решений."
+      content="Профессиональная разработка сайтов и веб-приложений"
     />
+
+    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Raleway:wght@700;900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Стили -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
@@ -34,7 +38,7 @@
             <li><a href="#contact" class="nav__link">Контакты</a></li>
           </ul>
 
-          <button class="burger" aria-label="Открыть меню">
+          <button class="burger" aria-label="Меню">
             <span class="burger__line"></span>
             <span class="burger__line"></span>
             <span class="burger__line"></span>
@@ -43,147 +47,173 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__title animate" data-delay="0.1">
-            <span class="text-gradient">Создаём будущее</span><br />
-            вашего бизнеса онлайн
+          <h1 class="hero__title animate">
+            <span class="text-gradient">Цифровая трансформация</span><br />
+            вашего бизнеса
           </h1>
           <p class="hero__subtitle">
-            Разработка уникальных цифровых решений с 2018 года
+            Создаем уникальные веб-решения с 2018 года
           </p>
-          <a href="#contact" class="btn">Начать сотрудничество</a>
+          <a href="#contact" class="btn">Начать проект</a>
+        </div>
+        <div class="hero__image">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Рабочее пространство"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section id="services" class="section">
       <div class="container">
         <h2 class="section__title animate">Наши услуги</h2>
-
         <div class="services-grid">
-          <article class="service-card animate">
+          <div class="service-card animate">
             <div class="service-card__icon">
-              <svg aria-hidden="true">
-                <use href="assets/icons/sprite.svg#web"></use>
-              </svg>
+              <img
+                src="https://img.icons8.com/3d-fluency/100/code.png"
+                alt="Веб-разработка"
+              />
             </div>
             <h3>Веб-разработка</h3>
-            <p>Создание современных веб-приложений на React и Vue.js</p>
-            <ul class="service-features">
-              <li>Индивидуальный дизайн</li>
-              <li>Техническая поддержка</li>
-              <li>Интеграция с API</li>
-            </ul>
-          </article>
+            <p>Современные технологии: React, Vue.js, Node.js</p>
+          </div>
 
-          <!-- Другие услуги -->
+          <div class="service-card animate">
+            <div class="service-card__icon">
+              <img
+                src="https://img.icons8.com/3d-fluency/100/design.png"
+                alt="Дизайн"
+              />
+            </div>
+            <h3>UI/UX Дизайн</h3>
+            <p>Интуитивные интерфейсы с продуманной логикой</p>
+          </div>
+
+          <div class="service-card animate">
+            <div class="service-card__icon">
+              <img
+                src="https://img.icons8.com/3d-fluency/100/rocket.png"
+                alt="SEO"
+              />
+            </div>
+            <h3>Продвижение</h3>
+            <p>SEO оптимизация и маркетинговая стратегия</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio -->
     <section id="portfolio" class="section bg-light">
       <div class="container">
-        <h2 class="section__title animate">Наши проекты</h2>
-
+        <h2 class="section__title animate">Наши работы</h2>
         <div class="portfolio-grid">
-          <article class="portfolio-item animate">
+          <div class="portfolio-item animate">
             <img
-              src="assets/images/project-1.webp"
-              alt="Корпоративный сайт"
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="Проект 1"
               loading="lazy"
             />
-            <div class="portfolio-item__content">
-              <h4>IT Стартап</h4>
-              <p>Полный цикл разработки платформы</p>
-              <a href="#" class="portfolio-link">Подробнее →</a>
-            </div>
-          </article>
-
-          <!-- Другие проекты -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="section">
-      <div class="container">
-        <h2 class="section__title animate">Отзывы клиентов</h2>
-
-        <div class="reviews-slider">
-          <div class="review-card animate">
-            <div class="review-header">
-              <img
-                src="assets/images/client-1.webp"
-                alt="Анна Иванова"
-                class="review-photo"
-                loading="lazy"
-              />
-              <div class="review-author">
-                <h4>Анна Иванова</h4>
-                <p>CEO Tech Solutions</p>
-              </div>
-            </div>
-            <div class="review-body">
-              <p>«Профессиональный подход и соблюдение сроков. Рекомендуем!»</p>
-              <div class="review-rating">★★★★★</div>
+            <div class="portfolio-info">
+              <h4>Корпоративный портал</h4>
+              <p>Веб-приложение для управления бизнес-процессами</p>
             </div>
           </div>
 
-          <!-- Другие отзывы -->
+          <div class="portfolio-item animate">
+            <img
+              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="Проект 2"
+              loading="lazy"
+            />
+            <div class="portfolio-info">
+              <h4>Интернет-магазин</h4>
+              <p>E-commerce платформа с AI-рекомендациями</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Reviews -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <h2 class="section__title animate">Отзывы клиентов</h2>
+        <div class="reviews-slider">
+          <div class="review-card animate">
+            <img
+              src="https://randomuser.me/api/portraits/women/1.jpg"
+              alt="Анна Иванова"
+              class="review-photo"
+            />
+            <h4>Анна Иванова</h4>
+            <div class="rating">★★★★★</div>
+            <p>
+              "Профессиональный подход и соблюдение сроков. Результат превзошел
+              ожидания!"
+            </p>
+          </div>
+
+          <div class="review-card animate">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              alt="Дмитрий Петров"
+              class="review-photo"
+            />
+            <h4>Дмитрий Петров</h4>
+            <div class="rating">★★★★☆</div>
+            <p>
+              "Отличное соотношение цены и качества. Буем рекомендовать
+              партнёрам!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="section bg-dark">
       <div class="container">
-        <h2 class="section__title animate">Связаться с нами</h2>
-
+        <h2 class="section__title animate">Контакты</h2>
         <div class="contact-wrapper">
           <form class="contact-form animate">
-            <div class="form-group">
-              <input type="text" id="name" required />
-              <label for="name">Ваше имя</label>
-            </div>
-
-            <div class="form-group">
-              <input type="email" id="email" required />
-              <label for="email">Эл. почта</label>
-            </div>
-
-            <div class="form-group">
-              <textarea id="message" rows="5" required></textarea>
-              <label for="message">Опишите проект</label>
-            </div>
-
-            <button type="submit" class="btn">Отправить заявку</button>
+            <input type="text" placeholder="Ваше имя" required />
+            <input type="email" placeholder="Эл. почта" required />
+            <textarea rows="5" placeholder="Опишите ваш проект"></textarea>
+            <button type="submit" class="btn">Отправить</button>
           </form>
 
           <div class="contact-info animate">
             <div class="contact-item">
-              <svg aria-hidden="true">
-                <use href="assets/icons/sprite.svg#phone"></use>
-              </svg>
+              <img
+                src="https://img.icons8.com/3d-fluency/100/phone.png"
+                alt="Телефон"
+              />
               <a href="tel:+79991234567">+7 (999) 123-45-67</a>
             </div>
             <div class="contact-item">
-              <svg aria-hidden="true">
-                <use href="assets/icons/sprite.svg#email"></use>
-              </svg>
+              <img
+                src="https://img.icons8.com/3d-fluency/100/email.png"
+                alt="Почта"
+              />
               <a href="mailto:contact@goldensystem.ru"
                 >contact@goldensystem.ru</a
               >
             </div>
             <div class="contact-item">
-              <svg aria-hidden="true">
-                <use href="assets/icons/sprite.svg#map"></use>
-              </svg>
-              <address>Москва, ул. Цифровая, 15</address>
+              <img
+                src="https://img.icons8.com/3d-fluency/100/map-marker.png"
+                alt="Адрес"
+              />
+              <p>Кишинёв, ул. Цифровая, 15</p>
             </div>
           </div>
         </div>
@@ -193,43 +223,23 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <a href="/" class="logo">
-              <span class="logo__icon">GS</span>
-              <span class="logo__text">Golden System</span>
-            </a>
-            <p>Премиальные цифровые решения</p>
-          </div>
-
-          <nav class="footer-nav">
-            <h4>Навигация</h4>
-            <ul>
-              <li><a href="#services">Услуги</a></li>
-              <li><a href="#portfolio">Портфолио</a></li>
-              <li><a href="#reviews">Отзывы</a></li>
-              <li><a href="#contact">Контакты</a></li>
-            </ul>
-          </nav>
-
-          <div class="footer-social">
-            <h4>Соцсети</h4>
-            <div class="social-links">
-              <a href="#" aria-label="Telegram">
-                <svg><use href="assets/icons/sprite.svg#telegram"></use></svg>
-              </a>
-              <a href="#" aria-label="VK">
-                <svg><use href="assets/icons/sprite.svg#vk"></use></svg>
-              </a>
-              <a href="#" aria-label="WhatsApp">
-                <svg><use href="assets/icons/sprite.svg#whatsapp"></use></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-copyright">
-          <p>© 2023 Golden System. Все права защищены</p>
+        <p>© 2025 Golden System. Все права защищены</p>
+        <div class="social-links">
+          <a href="#"
+            ><img
+              src="https://img.icons8.com/3d-fluency/100/telegram.png"
+              alt="Telegram"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://img.icons8.com/3d-fluency/100/whatsapp.png"
+              alt="WhatsApp"
+          /></a>
+          <a href="#"
+            ><img
+              src="https://img.icons8.com/3d-fluency/100/linkedin.png"
+              alt="LinkedIn"
+          /></a>
         </div>
       </div>
     </footer>
