@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden System - Веб-разработка премиум класса</title>
     <meta
       name="description"
-      content="Golden System - Веб-студия полного цикла"
+      content="Профессиональная веб-студия полного цикла. Разработка сайтов, веб-приложений и цифровых решений."
     />
-    <title>Golden System - Создание сайтов и веб-приложений</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Raleway:wght@700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="antialiased">
     <!-- Header -->
@@ -27,14 +27,14 @@
           </a>
 
           <ul class="nav__list">
-            <li><a href="#home" class="nav__link active">Главная</a></li>
+            <li><a href="#home" class="nav__link">Главная</a></li>
             <li><a href="#services" class="nav__link">Услуги</a></li>
             <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
             <li><a href="#reviews" class="nav__link">Отзывы</a></li>
             <li><a href="#contact" class="nav__link">Контакты</a></li>
           </ul>
 
-          <button class="burger">
+          <button class="burger" aria-label="Открыть меню">
             <span class="burger__line"></span>
             <span class="burger__line"></span>
             <span class="burger__line"></span>
@@ -47,14 +47,14 @@
     <section id="home" class="hero">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__title">
-            <span class="text-gradient">Цифровые решения</span>
-            для вашего бизнеса
+          <h1 class="hero__title animate" data-delay="0.1">
+            <span class="text-gradient">Создаём будущее</span><br />
+            вашего бизнеса онлайн
           </h1>
           <p class="hero__subtitle">
-            Полный цикл разработки: от идеи до реализации
+            Разработка уникальных цифровых решений с 2018 года
           </p>
-          <a href="#contact" class="btn">Обсудить проект</a>
+          <a href="#contact" class="btn">Начать сотрудничество</a>
         </div>
       </div>
     </section>
@@ -62,48 +62,129 @@
     <!-- Services Section -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section__title">Наши услуги</h2>
+        <h2 class="section__title animate">Наши услуги</h2>
 
         <div class="services-grid">
-          <!-- Service Cards -->
+          <article class="service-card animate">
+            <div class="service-card__icon">
+              <svg aria-hidden="true">
+                <use href="assets/icons/sprite.svg#web"></use>
+              </svg>
+            </div>
+            <h3>Веб-разработка</h3>
+            <p>Создание современных веб-приложений на React и Vue.js</p>
+            <ul class="service-features">
+              <li>Индивидуальный дизайн</li>
+              <li>Техническая поддержка</li>
+              <li>Интеграция с API</li>
+            </ul>
+          </article>
+
+          <!-- Другие услуги -->
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
+    <section id="portfolio" class="section bg-light">
       <div class="container">
-        <h2 class="section__title">Наши работы</h2>
+        <h2 class="section__title animate">Наши проекты</h2>
 
         <div class="portfolio-grid">
-          <!-- Portfolio Items -->
+          <article class="portfolio-item animate">
+            <img
+              src="assets/images/project-1.webp"
+              alt="Корпоративный сайт"
+              loading="lazy"
+            />
+            <div class="portfolio-item__content">
+              <h4>IT Стартап</h4>
+              <p>Полный цикл разработки платформы</p>
+              <a href="#" class="portfolio-link">Подробнее →</a>
+            </div>
+          </article>
+
+          <!-- Другие проекты -->
         </div>
       </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="section bg-light">
+    <section id="reviews" class="section">
       <div class="container">
-        <h2 class="section__title">Отзывы клиентов</h2>
+        <h2 class="section__title animate">Отзывы клиентов</h2>
 
         <div class="reviews-slider">
-          <!-- Review Cards -->
+          <div class="review-card animate">
+            <div class="review-header">
+              <img
+                src="assets/images/client-1.webp"
+                alt="Анна Иванова"
+                class="review-photo"
+                loading="lazy"
+              />
+              <div class="review-author">
+                <h4>Анна Иванова</h4>
+                <p>CEO Tech Solutions</p>
+              </div>
+            </div>
+            <div class="review-body">
+              <p>«Профессиональный подход и соблюдение сроков. Рекомендуем!»</p>
+              <div class="review-rating">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Другие отзывы -->
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section bg-dark">
       <div class="container">
-        <h2 class="section__title">Свяжитесь с нами</h2>
+        <h2 class="section__title animate">Связаться с нами</h2>
 
         <div class="contact-wrapper">
-          <form class="contact-form">
-            <!-- Form Fields -->
+          <form class="contact-form animate">
+            <div class="form-group">
+              <input type="text" id="name" required />
+              <label for="name">Ваше имя</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" required />
+              <label for="email">Эл. почта</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" rows="5" required></textarea>
+              <label for="message">Опишите проект</label>
+            </div>
+
+            <button type="submit" class="btn">Отправить заявку</button>
           </form>
 
-          <div class="contact-info">
-            <!-- Contact Details -->
+          <div class="contact-info animate">
+            <div class="contact-item">
+              <svg aria-hidden="true">
+                <use href="assets/icons/sprite.svg#phone"></use>
+              </svg>
+              <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+            </div>
+            <div class="contact-item">
+              <svg aria-hidden="true">
+                <use href="assets/icons/sprite.svg#email"></use>
+              </svg>
+              <a href="mailto:contact@goldensystem.ru"
+                >contact@goldensystem.ru</a
+              >
+            </div>
+            <div class="contact-item">
+              <svg aria-hidden="true">
+                <use href="assets/icons/sprite.svg#map"></use>
+              </svg>
+              <address>Москва, ул. Цифровая, 15</address>
+            </div>
           </div>
         </div>
       </div>
@@ -112,7 +193,44 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <!-- Footer Content -->
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="/" class="logo">
+              <span class="logo__icon">GS</span>
+              <span class="logo__text">Golden System</span>
+            </a>
+            <p>Премиальные цифровые решения</p>
+          </div>
+
+          <nav class="footer-nav">
+            <h4>Навигация</h4>
+            <ul>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#portfolio">Портфолио</a></li>
+              <li><a href="#reviews">Отзывы</a></li>
+              <li><a href="#contact">Контакты</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-social">
+            <h4>Соцсети</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Telegram">
+                <svg><use href="assets/icons/sprite.svg#telegram"></use></svg>
+              </a>
+              <a href="#" aria-label="VK">
+                <svg><use href="assets/icons/sprite.svg#vk"></use></svg>
+              </a>
+              <a href="#" aria-label="WhatsApp">
+                <svg><use href="assets/icons/sprite.svg#whatsapp"></use></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>© 2023 Golden System. Все права защищены</p>
+        </div>
       </div>
     </footer>
 
