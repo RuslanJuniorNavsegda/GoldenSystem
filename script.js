@@ -1,197 +1,165 @@
 class GoldenSystem {
   constructor() {
     this.init();
+    this.addEventListeners();
   }
 
   init() {
     this.initBurgerMenu();
     this.initSmoothScroll();
-    this.initAnimations();
-    this.initFormValidation();
-    this.initSlider();
-    this.initScrollEffects();
-    this.addEventListeners();
+    this.initScrollAnimations();
+    this.initPortfolioFilter();
+    this.initFormHandler();
+    this.initHeaderEffects();
   }
 
-  // Инициализация бургер-меню
+  // Инициализация элементов
   initBurgerMenu() {
     this.burger = document.querySelector(".burger");
-    this.navList = document.querySelector(".nav__list");
+    this.navLinks = document.querySelector(".nav-links");
     this.body = document.body;
+  }
 
-    this.burger.addEventListener("click", (e) => {
-      e.preventDefault();
-      this.toggleMenu();
-    });
-
-    // Закрытие при клике вне меню
-    document.addEventListener("click", (e) => {
-      if (!this.burger.contains(e.target) && !this.navList.contains(e.target)) {
-        this.closeMenu();
-      }
-    });
-
-    // Закрытие по ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") this.closeMenu();
+  // Плавный скролл
+  initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) =>
+        this.handleSmoothScroll(e, anchor)
+      );
     });
   }
 
+  // Анимации при скролле
+  initScrollAnimations() {
+    this.observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+            this.handlePortfolioHover(entry.target); // Новая функция для портфолио
+          }
+        }),
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".scroll-effect").forEach((el) => {
+      this.observer.observe(el);
+    });
+  }
+
+  // Фильтрация портфолио
+  initPortfolioFilter() {
+    this.filterButtons = document.querySelectorAll(".filter-btn");
+    this.portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    this.filterButtons.forEach((button) => {
+      button.addEventListener("click", () => this.handleFilterClick(button));
+    });
+  }
+
+  // Обработка формы
+  initFormHandler() {
+    this.form = document.querySelector(".contact-form");
+    if (this.form) {
+      this.form.addEventListener("submit", (e) => this.handleFormSubmit(e));
+    }
+  }
+
+  // Эффекты для хедера
+  initHeaderEffects() {
+    this.header = document.querySelector(".header");
+    window.addEventListener("scroll", () => {
+      this.header.classList.toggle("scrolled", window.scrollY > 100);
+    });
+  }
+
+  // Общие обработчики событий
+  addEventListeners() {
+    document.addEventListener("click", (e) => this.handleDocumentClick(e));
+    document.addEventListener("keydown", (e) => this.handleKeyDown(e));
+    window.addEventListener("resize", () => this.handleResize());
+  }
+
+  // Обработчики событий
+  handleSmoothScroll(e, anchor) {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      this.closeMenu();
+    }
+  }
+
+  handleFilterClick(button) {
+    this.filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+    const filter = button.textContent.toLowerCase();
+
+    this.portfolioItems.forEach((item) => {
+      item.style.display =
+        filter === "все" || item.dataset.category.includes(filter)
+          ? "grid"
+          : "none";
+    });
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    this.showFormMessage("Сообщение успешно отправлено!", "success");
+    this.form.reset();
+  }
+
+  handleDocumentClick(e) {
+    if (!this.burger.contains(e.target) && !this.navLinks.contains(e.target)) {
+      this.closeMenu();
+    }
+  }
+
+  handleKeyDown(e) {
+    if (e.key === "Escape") this.closeMenu();
+  }
+
+  handleResize() {
+    if (window.innerWidth > 768) {
+      this.closeMenu();
+    }
+  }
+
+  handlePortfolioHover(element) {
+    if (element.classList.contains("portfolio-item")) {
+      element.addEventListener("mouseenter", () => {
+        element.querySelector(".portfolio-overlay").style.opacity = "1";
+      });
+      element.addEventListener("mouseleave", () => {
+        element.querySelector(".portfolio-overlay").style.opacity = "0";
+      });
+    }
+  }
+
+  // Управление меню
   toggleMenu() {
     this.burger.classList.toggle("active");
-    this.navList.classList.toggle("active");
+    this.navLinks.classList.toggle("active");
     this.body.classList.toggle("lock");
   }
 
   closeMenu() {
     this.burger.classList.remove("active");
-    this.navList.classList.remove("active");
+    this.navLinks.classList.remove("active");
     this.body.classList.remove("lock");
   }
 
-  // Плавная прокрутка
-  initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute("href"));
+  // Вспомогательные методы
+  showFormMessage(text, type) {
+    const existingMessage = this.form.querySelector(".form-message");
+    if (existingMessage) existingMessage.remove();
 
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-
-          // Закрытие меню на мобильных
-          if (window.innerWidth < 768) {
-            this.closeMenu();
-          }
-        }
-      });
-    });
-  }
-
-  // Анимации при скролле
-  initAnimations() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animated");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
-      }
-    );
-
-    document.querySelectorAll(".animate").forEach((el) => {
-      observer.observe(el);
-    });
-  }
-
-  // Слайдер отзывов
-  initSlider() {
-    const slider = document.querySelector(".reviews-slider");
-    if (!slider) return;
-
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-
-    slider.addEventListener("mousedown", this.sliderStart);
-    slider.addEventListener("touchstart", this.sliderStart);
-    slider.addEventListener("mouseup", this.sliderEnd);
-    slider.addEventListener("touchend", this.sliderEnd);
-    slider.addEventListener("mousemove", this.sliderMove);
-    slider.addEventListener("touchmove", this.sliderMove);
-  }
-
-  sliderStart(e) {
-    isDragging = true;
-    startPos = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
-    prevTranslate = currentTranslate;
-  }
-
-  sliderEnd() {
-    isDragging = false;
-  }
-
-  sliderMove(e) {
-    if (!isDragging) return;
-    const currentPosition = e.type.includes("touch")
-      ? e.touches[0].clientX
-      : e.clientX;
-    const diff = currentPosition - startPos;
-    currentTranslate = prevTranslate + diff;
-    this.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  // Обработка форм
-  initFormValidation() {
-    document.querySelectorAll("form").forEach((form) => {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const submitBtn = form.querySelector('button[type="submit"]');
-
-        try {
-          submitBtn.disabled = true;
-
-          // Заглушка для демонстрации
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-
-          this.showFormMessage(
-            form,
-            "Сообщение успешно отправлено!",
-            "success"
-          );
-          form.reset();
-        } catch (error) {
-          this.showFormMessage(form, "Ошибка отправки!", "error");
-        } finally {
-          submitBtn.disabled = false;
-        }
-      });
-    });
-  }
-
-  showFormMessage(form, text, type) {
     const message = document.createElement("div");
     message.className = `form-message ${type}`;
     message.textContent = text;
 
-    form.parentNode.insertBefore(message, form);
+    this.form.prepend(message);
     setTimeout(() => message.remove(), 3000);
-  }
-
-  // Эффекты при скролле
-  initScrollEffects() {
-    const header = document.querySelector(".header");
-
-    window.addEventListener("scroll", () => {
-      // Эффект хедера
-      window.scrollY > 100
-        ? header.classList.add("scrolled")
-        : header.classList.remove("scrolled");
-
-      // Параллакс для героя
-      const heroImage = document.querySelector(".hero__image img");
-      if (heroImage) {
-        heroImage.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-      }
-    });
-  }
-
-  // Глобальные обработчики
-  addEventListeners() {
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) this.closeMenu();
-    });
   }
 }
 
@@ -199,3 +167,8 @@ class GoldenSystem {
 document.addEventListener("DOMContentLoaded", () => {
   new GoldenSystem();
 });
+
+// Полифил для Safari
+if (!("scrollBehavior" in document.documentElement.style)) {
+  import("smoothscroll-polyfill").then(({ polyfill }) => polyfill());
+}
